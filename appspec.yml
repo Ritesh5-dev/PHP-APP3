@@ -2,11 +2,12 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/html
+    destination: /home/ubuntu/myapp
+
 hooks:
   BeforeInstall:
     - location: scripts/setup.sh
-      timeout: 180
-      runas: ubuntu
+      timeout: 300
+
 
 
