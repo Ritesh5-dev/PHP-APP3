@@ -4,8 +4,9 @@ files:
   - source: /
     destination: /var/www/html
 hooks:
-  AfterInstall:
+  BeforeInstall:
     - location: scripts/setup.sh
-      timeout: 300
-      runas: root
+      timeout: 180
+      runas: ec2-user
+
 
