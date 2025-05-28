@@ -1,1 +1,3 @@
-<?php echo 'Hello from EC2 PHP App!'; ?>
+<?php echo 'Hello from EC2 PHP App!'; 
+      echo 'HII';
+?>
