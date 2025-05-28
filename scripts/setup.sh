@@ -3,23 +3,21 @@
 # Exit immediately if a command fails
 set -e
 
-echo "Installing dependencies..."
-apt install -y nginx unzip curl
-
-echo "Setup complete."
-# Update package index
+echo "Updating package index..."
 apt update -y
 
-# Install required tools
-apt install -y software-properties-common
+echo "Installing base dependencies..."
+apt install -y software-properties-common curl unzip nginx
 
-# Add Ondřej Surý’s PPA for PHP
+echo "Adding PHP PPA..."
 add-apt-repository ppa:ondrej/php -y
 apt update -y
 
-# Install Apache and PHP 8.1
+echo "Installing Apache and PHP 8.1..."
 apt install -y apache2 php8.1 libapache2-mod-php8.1 php8.1-cli php8.1-common
 
-# Enable and start Apache
+echo "Enabling and starting Apache..."
 systemctl enable apache2
 systemctl start apache2
+
+echo "Setup complete."
