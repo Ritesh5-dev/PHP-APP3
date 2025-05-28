@@ -3,6 +3,10 @@
 # Exit immediately if a command fails
 set -e
 
+echo "Installing dependencies..."
+apt install -y nginx unzip curl
+
+echo "Setup complete."
 # Update package index
 apt update -y
 
